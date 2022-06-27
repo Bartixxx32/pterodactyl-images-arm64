@@ -39,4 +39,4 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: |
-            ghcr.io/Bartixxx32/images:dotnet_${{ matrix.tag }}
+            ghcr.io/bartixxx32/images:dotnet_${{ matrix.tag }}
