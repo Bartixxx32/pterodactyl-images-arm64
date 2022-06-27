@@ -18,6 +18,9 @@ RUN apt-get -y install gcc g++ libgcc1 libgcc1 libc++-dev gdb libc6 git wget cur
     libfontconfig libicu63 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadbclient-dev libduktape203 locales ffmpeg gnupg2 apt-transport-https software-properties-common ca-certificates tzdata \
     liblua5.3 libz-dev rapidjson-dev
 
+# addons
+RUN apt-get -y install aria2
+
 ## configure locale
 RUN update-locale lang=en_US.UTF-8 \
  && dpkg-reconfigure --frontend noninteractive locales
