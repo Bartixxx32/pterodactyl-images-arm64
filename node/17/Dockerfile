@@ -2,7 +2,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH node:17-alpine
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
-RUN         apt update \
+RUN         apk update \
             && apk add ffmpeg \
             && npm -g install npm@latest \
             && useradd -m -d /home/container container
