@@ -29,14 +29,14 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
-          context: ./mono
-          file: ./mono/${{ matrix.tag }}/Dockerfile
+          context: ./node
+          file: ./node/${{ matrix.tag }}/Dockerfile
           platforms: linux/arm64
           push: true
           tags: |
-            ghcr.io/mikolajkolek/images:mono-${{ matrix.tag }}-arm64
+            ghcr.io/bartixxx32/images:mono_${{ matrix.tag }}
